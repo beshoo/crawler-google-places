@@ -593,8 +593,8 @@ module.exports.extractImages = async ({ page, maxImages }) => {
     }
 
     let resultImageUrls;
-
-    const mainImageSel = '.section-hero-header-image-hero-container';
+    // Google remove .section-hero-header-image-hero-container class and replace it with [jsaction="pane.heroHeaderImage.click"]
+    const mainImageSel = '[jsaction="pane.heroHeaderImage.click"]';
     const mainImage = await page.waitForSelector(mainImageSel);
 
     if (maxImages === 1) {
